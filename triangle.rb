@@ -14,7 +14,20 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+
+  sides = [ a, b, c ]
+
+  if sides.any? { |side| side <= 0}
+    raise TriangleError
+  elsif sides.uniq.length == 1
+    :equilateral
+  elsif sides.uniq.length == 2
+    # Test that no single side is greater nor equal to remaining sides
+    sides.max < sides.sort[0..1].sum ? :isosceles : ( raise TriangleError ) 
+  else
+    :scalene
+  end
+
 end
 
 # Error class used in part 2.  No need to change this code.
