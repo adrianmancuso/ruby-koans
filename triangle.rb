@@ -22,7 +22,7 @@ def triangle(a, b, c)
   elsif sides.uniq.length == 1
     :equilateral
   elsif sides.uniq.length == 2
-    # Test that no single side is greater nor equal to remaining sides
+    # Test that no single side is greater nor equal to remaining sidesst about_triangle_projectsco  
     sides.max < sides.sort[0..1].sum ? :isosceles : ( raise TriangleError ) 
   else
     :scalene
