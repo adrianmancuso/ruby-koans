@@ -34,16 +34,6 @@ def score(dice)
   score = 0
   dice_results = Hash.new(0)
   dice.each { |die| dice_results[die] +=1 }
-  # triple = dice_results.select { |die, count| count >= 3}
-
-
-  # if triple
-  #   if triple.key? 1
-  #     score += 1000
-  #   else
-  #     score += (triple.keys[0])*100
-  #   end
-  # end
 
   dice_results.each do |die, count|
     while count > 0
@@ -61,7 +51,6 @@ def score(dice)
       end
     end
   end
-
   score
 end
 
